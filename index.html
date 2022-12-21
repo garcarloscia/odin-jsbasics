@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práticas JS Odin</title>
+
+    <style>
+        .rosanegro {
+            border: 1px solid black;
+            background-color: pink;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- your HTML file: -->
+<body>
+    <h1>
+      THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container"></div>
+  </body>
+
+    <script>
+        const container = document.querySelector('#container');
+
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = 'This is the glorious text-content!';
+
+        container.appendChild(content);
+
+    
+        const parrafoSolo = document.createElement("p");
+        parrafoSolo.textContent = "Soy un parrafo sin div, pues y qué. Bueno que al final voy en un div container";
+        parrafoSolo.style.color="red";
+
+        container.appendChild(parrafoSolo);
+
+        const titularContainer = document.createElement('h3');
+        titularContainer.textContent = "Soy un titular y voy en azul porque quiero";
+        titularContainer.style.color="blue";
+
+        container.insertBefore(titularContainer,content);
+        
+        const cuadroRosa = document.createElement("div");
+        cuadroRosa.classList.add('rosanegro');
+       
+        const titularRosaNegro = document.createElement('h1');
+        titularRosaNegro.textContent="Soy un título en un div rosa";
+        cuadroRosa.appendChild(titularRosaNegro);
+
+        const parrafoRosaNegro = document.createElement('p');
+        parrafoRosaNegro.textContent="Yo soy un párrafo en ese mismo div";
+        cuadroRosa.appendChild(parrafoRosaNegro);
+
+        container.appendChild(cuadroRosa);
+
+
+    </script>
+    
+</body>
+</html>

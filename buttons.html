@@ -6,26 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .on {background-color: yellowgreen;}
+        button{
+        background-color: black;
+        }
+        .on {
+        background-color: yellowgreen !important;
+        }
     </style>
 </head>
 <body>
-    <div>
     <button id="S" value="S">Small</button>
     <button id="M" value="M">Medium</button>
     <button id="L" value="L">Large</button>
-</div>
+
     <script>
         const botones = document.querySelectorAll('button');
+        document.getElementById('L').classList.add('on');
         
         botones.forEach(boton=>{
           
             boton.addEventListener('click', (e)=>{
-                //borra la clase on de todos lo botones
+                //borra la clase .on de todos lo botones
                 botones.forEach(boton=>{
-                    document.querySelector(`#${boton.id}`).classList.remove('on'); 
+                    document.querySelector(`#${boton.value}`).classList.remove('on'); 
                 });
-                //aplica la clase on al botón seleccionado
+                //aplica la clase .on al botón seleccionado
                 e.target.classList.add('on');
             });
         });
